@@ -1,32 +1,4 @@
 @charset "UTF-8";
-@-webkit-keyframes weight {
-  from {
-    font-weight: 400;
-  }
-  25% {
-    font-weight: 500;
-  }
-  75% {
-    font-weight: 600;
-  }
-  to {
-    font-weight: 700;
-  }
-}
-@keyframes weight {
-  from {
-    font-weight: 400;
-  }
-  25% {
-    font-weight: 500;
-  }
-  75% {
-    font-weight: 600;
-  }
-  to {
-    font-weight: 700;
-  }
-}
 body {
   font-family: "Poppins", sans-serif;
   color: #777777;
@@ -133,8 +105,6 @@ h3 {
   height: 100%;
 }
 .header__body .header__inner .nav .nav__link:hover {
-  -webkit-animation: weight 0.3s linear;
-          animation: weight 0.3s linear;
   font-weight: 700;
 }
 .header__body .header__inner .nav .nav__link::before {
