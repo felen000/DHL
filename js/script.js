@@ -1,8 +1,11 @@
 $(document).ready(function () {
 
-	$('.burger').click(function (event) {
-		$('.burger, .header__menu').toggleClass('active');
-		$('body').toggleClass('lock');
+	$('.header__lang-title').click(function (event) {
+		$(this).toggleClass('active').next().slideToggle(300);
+	});
+	
+	$('.header__country-title').click(function (event) {
+		$(this).toggleClass('active').next().slideToggle(300);
 	});
 
 	$('.exlog__title').click(function (event) {
