@@ -579,6 +579,10 @@ h3 {
 .exlog__inner .exlog__tabs .exlog__logs-item {
   margin-bottom: 20px;
 }
+.exlog__inner .exlog__tabs .exlog__exps-item:hover,
+.exlog__inner .exlog__tabs .exlog__logs-item:hover {
+  cursor: pointer;
+}
 .exlog__inner .exlog__tabs .exlog__exps-item .exlog__title,
 .exlog__inner .exlog__tabs .exlog__logs-item .exlog__title {
   font-size: 0.875rem;
