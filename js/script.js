@@ -8,6 +8,10 @@ $(document).ready(function () {
 		$(this).toggleClass('active').next().slideToggle(300);
 	});
 
+	$('.burger').click(function (event) {
+		$('.burger, body, .nav').toggleClass('active')
+	});
+
 	$('.exlog__title').click(function (event) {
 		if ($('.exlog__exps, .exlog__logs').hasClass('one')) {
 			$('.exlog__title').not($(this)).removeClass('active');

@@ -4,6 +4,9 @@ body {
   color: #777777;
   letter-spacing: 0.03em;
 }
+body.active {
+  overflow: hidden;
+}
 
 h3 {
   font-size: 1.25rem;
@@ -15,6 +18,16 @@ h3 {
 .container {
   max-width: 1170px;
   margin: 0 auto;
+}
+@media (max-width: 1199px) {
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+main {
+  overflow: hidden;
 }
 
 .btn {
@@ -56,15 +69,31 @@ h3 {
   line-height: 1.7142857143;
   color: #fff;
 }
-.header .header__inner {
+@media (max-width: 991px) {
+  .header {
+    font-size: 0.8em;
+  }
+}
+.header__inner {
   max-width: 1170px;
   margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .header__head {
   background-color: #ba0000;
+  position: relative;
+  z-index: 4;
 }
 .header__head .header__inner {
-  padding: 18px 0;
+  padding: 1.125em 0;
 }
 .header__head .header__lang {
   position: relative;
@@ -81,6 +110,7 @@ h3 {
 .header__head .header__lang-link {
   display: none;
   position: absolute;
+  z-index: 2;
   width: 100%;
   top: 25px;
   left: 0;
@@ -106,6 +136,11 @@ h3 {
   margin-right: 30px;
   color: #fff;
 }
+@media (max-width: 480px) {
+  .header__head .header__right-block .header__contact {
+    margin-right: 5px;
+  }
+}
 .header__head .header__right-block .header__contact:hover {
   color: rgb(212, 210, 210);
 }
@@ -122,6 +157,7 @@ h3 {
 }
 .header__head .header__right-block .header__country-links {
   position: absolute;
+  z-index: 2;
   width: 100%;
   top: 25px;
   left: 0;
@@ -143,6 +179,30 @@ h3 {
 .header__body {
   text-transform: uppercase;
   background-color: #ffcc00;
+  position: relative;
+}
+.header__body::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 4;
+  height: 100%;
+  width: 100%;
+  background-color: #ffcc00;
+}
+@media (max-width: 991px) {
+  .header__body {
+    font-size: 0.8em;
+  }
+}
+.header__body .header__inner {
+  padding-right: 1.1em;
+}
+.header__body .header__logo {
+  position: relative;
+  z-index: 4;
 }
 .header__body .nav {
   height: 100%;
@@ -152,11 +212,36 @@ h3 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  z-index: 4;
+}
+@media (max-width: 767px) {
+  .header__body .nav {
+    position: fixed;
+    overflow: auto;
+    top: 0;
+    left: -100%;
+    z-index: 3;
+    padding: 90px 0;
+    font-size: 2em;
+    height: 100%;
+    width: 100%;
+    background-color: #ffcc00;
+    -webkit-transition-duration: 0.3s;
+         -o-transition-duration: 0.3s;
+            transition-duration: 0.3s;
+    display: block;
+  }
+  .header__body .nav.active {
+    left: 0;
+  }
+  .header__body .nav.active .nav__link {
+    padding-left: 15px;
+  }
 }
 .header__body .nav .nav__link {
   text-transform: uppercase;
   color: #ba0000;
-  padding: 39px 22.5px;
+  padding: 2.4375em 1.4em;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -165,6 +250,13 @@ h3 {
       -ms-flex-align: center;
           align-items: center;
   height: 100%;
+}
+@media (max-width: 767px) {
+  .header__body .nav .nav__link {
+    display: block;
+    height: auto;
+    padding: 0;
+  }
 }
 .header__body .nav .nav__link:hover {
   font-weight: 700;
@@ -187,8 +279,8 @@ h3 {
   opacity: 1;
 }
 .header__body .header__search {
-  width: 50px;
-  height: 50px;
+  width: 3.6em;
+  height: 3.6em;
   background-color: #ba0000;
   -webkit-box-shadow: 0px 10px 18px 0px rgba(186, 0, 0, 0.4);
           box-shadow: 0px 10px 18px 0px rgba(186, 0, 0, 0.4);
@@ -202,17 +294,42 @@ h3 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  position: relative;
+  z-index: 4;
 }
-.header__inner {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+
+.burger {
+  position: absolute;
+  z-index: 4;
+  right: 70px;
+  width: 25px;
+  display: none;
+}
+@media (max-width: 767px) {
+  .burger {
+    display: block;
+  }
+}
+.burger span {
+  display: block;
+  font-size: 0;
+  height: 3px;
+  width: 100%;
+  background-color: #ba0000;
+}
+.burger::before, .burger::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background-color: #ba0000;
+}
+.burger::before {
+  top: -8px;
+}
+.burger::after {
+  bottom: -8px;
 }
 
 .intro {
