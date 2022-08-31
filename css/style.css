@@ -103,6 +103,11 @@ main {
 .header__head .header__inner {
   padding: 1.125em 0;
 }
+@media (max-width: 480px) {
+  .header__head .header__inner {
+    padding: 0.6em 0;
+  }
+}
 .header__head .header__lang {
   position: relative;
   color: #fff;
