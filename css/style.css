@@ -46,6 +46,14 @@ main {
        -o-transition-duration: 0.1s;
           transition-duration: 0.1s;
 }
+@media (max-width: 480px) {
+  .btn {
+    width: 130px;
+    height: 50px;
+    font-size: 0.5625rem;
+    line-height: 50px;
+  }
+}
 .btn:hover, .btn.active {
   border-color: #ffcc00;
   background-color: #ffcc00;
@@ -338,6 +346,16 @@ main {
   background-size: cover;
   position: relative;
 }
+@media (max-width: 991px) {
+  .intro {
+    padding: 100px 0;
+  }
+}
+@media (max-width: 480px) {
+  .intro {
+    padding: 50px 0;
+  }
+}
 .intro::before {
   content: "";
   position: absolute;
@@ -353,13 +371,28 @@ main {
   height: 100%;
   padding-right: 34.188034188%;
 }
+@media (max-width: 991px) {
+  .intro__inner {
+    padding-right: 0;
+  }
+}
 .intro__inner .intro__title {
   font-size: 4.375rem;
   line-height: 1.1428571429;
   color: #ffffff;
-  padding-bottom: 40px;
-  margin-bottom: 40px;
+  padding-bottom: 0.57em;
+  margin-bottom: 0.57em;
   position: relative;
+}
+@media (max-width: 991px) {
+  .intro__inner .intro__title {
+    font-size: 3.75rem;
+  }
+}
+@media (max-width: 480px) {
+  .intro__inner .intro__title {
+    font-size: 3.125rem;
+  }
 }
 .intro__inner .intro__title::before {
   content: "";
@@ -374,7 +407,12 @@ main {
   font-size: 1.25rem;
   line-height: 1.5;
   color: #ffcc00;
-  margin-bottom: 40px;
+  margin-bottom: 2em;
+}
+@media (max-width: 991px) {
+  .intro__inner .intro__text {
+    font-size: 1.0625rem;
+  }
 }
 .intro__inner .intro__list {
   display: -webkit-box;
@@ -382,12 +420,28 @@ main {
   display: flex;
   margin-bottom: 61px;
 }
+@media (max-width: 767px) {
+  .intro__inner .intro__list {
+    margin-bottom: 40px;
+  }
+}
 .intro__inner .intro__list li {
   font-size: 1.25rem;
   line-height: 1.5;
   color: #ffffff;
-  margin-right: 26px;
+  margin-right: 1.3em;
   text-transform: uppercase;
+}
+@media (max-width: 991px) {
+  .intro__inner .intro__list li {
+    font-size: 1.0625rem;
+  }
+}
+@media (max-width: 480px) {
+  .intro__inner .intro__list li {
+    font-size: 0.9375rem;
+    margin-right: 0.6em;
+  }
 }
 .intro__inner .intro__list li .intro__dot {
   color: #ffcc00;
@@ -400,6 +454,11 @@ main {
 }
 .intro__inner .intro__btns .intro__btn {
   margin-right: 20px;
+}
+@media (max-width: 480px) {
+  .intro__inner .intro__btns .intro__btn {
+    margin-right: 10px;
+  }
 }
 
 .services {
