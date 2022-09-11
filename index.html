@@ -61,7 +61,7 @@
 				<div class="header__burger burger">
 					<span>menu</span>
 				</div>
-				
+
 				<div class="header__search">
 					<i class="fa fa-search"></i>
 				</div>
@@ -277,18 +277,13 @@
 			<div class="container">
 				<div class="exlog__inner">
 					<div class="exlog__tabs">
-						<input type="radio" name="tab-btn" id="tab-btn-1" value="" checked>
-						<div class="exlog__tabs-btn-1">
-							<label for="tab-btn-1">express</label>
+						<div class="exlog__tabs-nav">
+							<button class="exlog__tabs-btn active" data-id="#tab-1">express</button>
+							<button class="exlog__tabs-btn" data-id="#tab-2">logistics</button>
 						</div>
-						<input type="radio" name="tab-btn" id="tab-btn-2" value="">
-						<div class="exlog__tabs-btn-2">
-							<label for="tab-btn-2">logistics</label>
-						</div>
-
 
 						<!-- .exlog__exps -->
-						<div class="exlog__exps one">
+						<div class="exlog__exps exlog__tabs-item one active" id="tab-1">
 							<div class="exlog__exps-item">
 								<div class="exlog__title">
 									Track your shipment
@@ -351,7 +346,7 @@
 						</div>
 
 						<!-- exp__logs -->
-						<div class="exlog__logs">
+						<div class="exlog__logs exlog__tabs-item" id="tab-2">
 							<div class="exlog__logs-item">
 								<div class="exlog__title">
 									Lorem ipsum dolor sit.

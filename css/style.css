@@ -1,4 +1,3 @@
-@charset "UTF-8";
 body {
   font-family: "Poppins", sans-serif;
   color: #777777;
@@ -789,43 +788,16 @@ main {
       -ms-flex: 0 1 50%;
           flex: 0 1 50%;
   background-color: #ba0000;
-  /* отобразить контент, связанный с вабранной радиокнопкой (input type="radio") */
 }
-.exlog__inner .exlog__tabs input[type=radio] {
-  display: none;
+.exlog__inner .exlog__tabs-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
-.exlog__inner .exlog__tabs > .exlog__exps,
-.exlog__inner .exlog__tabs .exlog__logs {
-  /* скрыть контент по умолчанию */
-  display: none;
-}
-.exlog__inner .exlog__tabs #tab-btn-1:checked ~ .exlog__exps,
-.exlog__inner .exlog__tabs #tab-btn-2:checked ~ .exlog__logs {
-  display: block;
-}
-.exlog__inner .exlog__tabs #tab-btn-1:checked + .exlog__tabs-btn-1,
-.exlog__inner .exlog__tabs #tab-btn-2:checked + .exlog__tabs-btn-2 {
-  background-color: #ffcc00;
-  color: #ba0000;
-  font-weight: 700;
-  -webkit-box-shadow: 0px 10px 18px 0px rgba(255, 204, 0, 0.4);
-          box-shadow: 0px 10px 18px 0px rgba(255, 204, 0, 0.4);
-}
-.exlog__inner .exlog__tabs .exlog__tabs-btn-1,
-.exlog__inner .exlog__tabs .exlog__tabs-btn-2 {
-  display: inline-block;
-  position: absolute;
-  width: 50%;
-  top: 0;
-}
-.exlog__inner .exlog__tabs .exlog__tabs-btn-1 {
-  left: 0;
-}
-.exlog__inner .exlog__tabs .exlog__tabs-btn-2 {
-  right: 0;
-}
-.exlog__inner .exlog__tabs .exlog__tabs-btn-1 label,
-.exlog__inner .exlog__tabs .exlog__tabs-btn-2 label {
+.exlog__inner .exlog__tabs-nav .exlog__tabs-btn {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 50%;
+          flex: 0 1 50%;
   display: block;
   padding: 20px 0;
   text-align: center;
@@ -833,9 +805,22 @@ main {
   letter-spacing: 0.1em;
   color: #fff;
 }
+.exlog__inner .exlog__tabs-nav .exlog__tabs-btn.active {
+  background-color: #ffcc00;
+  color: #ba0000;
+  font-weight: 700;
+  -webkit-box-shadow: 0px 10px 18px 0px rgba(255, 204, 0, 0.4);
+          box-shadow: 0px 10px 18px 0px rgba(255, 204, 0, 0.4);
+}
+.exlog__inner .exlog__tabs .exlog__tabs-item {
+  display: none;
+}
+.exlog__inner .exlog__tabs .exlog__tabs-item.active {
+  display: block;
+}
 .exlog__inner .exlog__tabs .exlog__exps,
 .exlog__inner .exlog__tabs .exlog__logs {
-  padding: 104px 40px 20px;
+  padding: 40px 40px 20px;
 }
 .exlog__inner .exlog__tabs .exlog__exps-item,
 .exlog__inner .exlog__tabs .exlog__logs-item {

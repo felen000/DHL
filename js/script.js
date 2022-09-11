@@ -3,13 +3,13 @@ $(document).ready(function () {
 	$('.header__lang-title').click(function (event) {
 		$(this).toggleClass('active').next().slideToggle(300);
 	});
-	
+
 	$('.header__country-title').click(function (event) {
 		$(this).toggleClass('active').next().slideToggle(300);
 	});
 
 	$('.burger').click(function (event) {
-		$('.burger, body, .nav').toggleClass('active')
+		$('.burger, body, .nav').toggleClass('active');
 	});
 
 	$('.exlog__title').click(function (event) {
@@ -21,3 +21,23 @@ $(document).ready(function () {
 	});
 
 });
+
+const tabBtns = document.querySelectorAll('.exlog__tabs-btn');
+const tabItems = document.querySelectorAll('.exlog__tabs-item');
+
+tabBtns.forEach(item => {
+
+	item.addEventListener('click', function () {
+		let currentBtn = item;
+		let tabId = currentBtn.getAttribute('data-id');
+		let currentTab = document.querySelector(tabId);
+
+		tabBtns.forEach(item => item.classList.remove('active'));
+		tabItems.forEach(item => item.classList.remove('active'));
+
+		currentBtn.classList.add('active');
+		currentTab.classList.add('active');
+
+	})
+}
+)
