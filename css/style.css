@@ -111,10 +111,13 @@ main {
   position: relative;
   color: #fff;
 }
-.header__head .header__lang-title.active .fa {
+.header__head .header__lang.active .header__lang-title .fa {
   -webkit-transform: rotate(180deg);
       -ms-transform: rotate(180deg);
           transform: rotate(180deg);
+}
+.header__head .header__lang.active .header__lang-link {
+  display: block;
 }
 .header__head .header__lang:hover {
   cursor: pointer;
@@ -159,13 +162,16 @@ main {
 .header__head .header__right-block .header__country {
   position: relative;
 }
-.header__head .header__right-block .header__country-title.active .fa {
+.header__head .header__right-block .header__country:hover {
+  cursor: pointer;
+}
+.header__head .header__right-block .header__country.active .header__country-links {
+  display: block;
+}
+.header__head .header__right-block .header__country.active .header__country-title .fa {
   -webkit-transform: rotate(180deg);
       -ms-transform: rotate(180deg);
           transform: rotate(180deg);
-}
-.header__head .header__right-block .header__country:hover {
-  cursor: pointer;
 }
 .header__head .header__right-block .header__country-links {
   position: absolute;
@@ -822,16 +828,35 @@ main {
 .exlog__inner .exlog__tabs .exlog__logs {
   padding: 40px 40px 20px;
 }
-.exlog__inner .exlog__tabs .exlog__exps-item,
-.exlog__inner .exlog__tabs .exlog__logs-item {
+.exlog__inner .exlog__tabs .exlog__exps .exlog__item,
+.exlog__inner .exlog__tabs .exlog__logs .exlog__item {
   margin-bottom: 20px;
 }
-.exlog__inner .exlog__tabs .exlog__exps-item:hover,
-.exlog__inner .exlog__tabs .exlog__logs-item:hover {
+.exlog__inner .exlog__tabs .exlog__exps .exlog__item:hover,
+.exlog__inner .exlog__tabs .exlog__logs .exlog__item:hover {
   cursor: pointer;
 }
-.exlog__inner .exlog__tabs .exlog__exps-item .exlog__title,
-.exlog__inner .exlog__tabs .exlog__logs-item .exlog__title {
+.exlog__inner .exlog__tabs .exlog__exps .exlog__item.active .exlog__trigger,
+.exlog__inner .exlog__tabs .exlog__logs .exlog__item.active .exlog__trigger {
+  color: #ba0000;
+  font-weight: 700;
+  background-color: #ffcc00;
+  border: 2px solid #ffcc00;
+}
+.exlog__inner .exlog__tabs .exlog__exps .exlog__item.active .exlog__trigger .fa,
+.exlog__inner .exlog__tabs .exlog__logs .exlog__item.active .exlog__trigger .fa {
+  border-right: 2px solid #ba0000;
+  border-left: none;
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+.exlog__inner .exlog__tabs .exlog__exps .exlog__item.active .exlog__content,
+.exlog__inner .exlog__tabs .exlog__logs .exlog__item.active .exlog__content {
+  display: block;
+}
+.exlog__inner .exlog__tabs .exlog__exps .exlog__item .exlog__trigger,
+.exlog__inner .exlog__tabs .exlog__logs .exlog__item .exlog__trigger {
   font-size: 0.875rem;
   text-transform: uppercase;
   color: #ffffff;
@@ -839,8 +864,8 @@ main {
   padding: 20px;
   position: relative;
 }
-.exlog__inner .exlog__tabs .exlog__exps-item .exlog__title .fa,
-.exlog__inner .exlog__tabs .exlog__logs-item .exlog__title .fa {
+.exlog__inner .exlog__tabs .exlog__exps .exlog__item .exlog__trigger .fa,
+.exlog__inner .exlog__tabs .exlog__logs .exlog__item .exlog__trigger .fa {
   position: absolute;
   top: 0;
   right: 0;
@@ -849,23 +874,8 @@ main {
   line-height: normal;
   border-left: 2px solid #fff;
 }
-.exlog__inner .exlog__tabs .exlog__exps-item .exlog__title.active,
-.exlog__inner .exlog__tabs .exlog__logs-item .exlog__title.active {
-  color: #ba0000;
-  font-weight: 700;
-  background-color: #ffcc00;
-  border: 2px solid #ffcc00;
-}
-.exlog__inner .exlog__tabs .exlog__exps-item .exlog__title.active .fa,
-.exlog__inner .exlog__tabs .exlog__logs-item .exlog__title.active .fa {
-  border-right: 2px solid #ba0000;
-  border-left: none;
-  -webkit-transform: rotate(180deg);
-      -ms-transform: rotate(180deg);
-          transform: rotate(180deg);
-}
-.exlog__inner .exlog__tabs .exlog__exps-item .exlog__content,
-.exlog__inner .exlog__tabs .exlog__logs-item .exlog__content {
+.exlog__inner .exlog__tabs .exlog__exps .exlog__item .exlog__content,
+.exlog__inner .exlog__tabs .exlog__logs .exlog__item .exlog__content {
   padding: 24px 20px;
   color: #fff;
   background-color: #a30000;
@@ -873,18 +883,18 @@ main {
   border-top: none;
   display: none;
 }
-.exlog__inner .exlog__tabs .exlog__exps-item .exlog__content .exlog__label,
-.exlog__inner .exlog__tabs .exlog__logs-item .exlog__content .exlog__label {
+.exlog__inner .exlog__tabs .exlog__exps .exlog__item .exlog__content .exlog__label,
+.exlog__inner .exlog__tabs .exlog__logs .exlog__item .exlog__content .exlog__label {
   letter-spacing: 0.1em;
   font-weight: 700;
   margin-bottom: 15px;
 }
-.exlog__inner .exlog__tabs .exlog__exps-item .exlog__content .exlog__list li,
-.exlog__inner .exlog__tabs .exlog__logs-item .exlog__content .exlog__list li {
+.exlog__inner .exlog__tabs .exlog__exps .exlog__item .exlog__content .exlog__list li,
+.exlog__inner .exlog__tabs .exlog__logs .exlog__item .exlog__content .exlog__list li {
   margin-bottom: 10px;
 }
-.exlog__inner .exlog__tabs .exlog__exps-item .exlog__content .exlog__list li .fa,
-.exlog__inner .exlog__tabs .exlog__logs-item .exlog__content .exlog__list li .fa {
+.exlog__inner .exlog__tabs .exlog__exps .exlog__item .exlog__content .exlog__list li .fa,
+.exlog__inner .exlog__tabs .exlog__logs .exlog__item .exlog__content .exlog__list li .fa {
   font-size: 1.25rem;
   color: #ffcc00;
   margin-right: 10px;

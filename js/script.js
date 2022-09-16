@@ -1,26 +1,26 @@
-$(document).ready(function () {
+// Header
 
-	$('.header__lang-title').click(function (event) {
-		$(this).toggleClass('active').next().slideToggle(300);
-	});
+document.querySelector('.header__lang').addEventListener('click', (event) => {
+	toggleAcitveClass('.header__lang')
+})
 
-	$('.header__country-title').click(function (event) {
-		$(this).toggleClass('active').next().slideToggle(300);
-	});
+document.querySelector('.header__country').addEventListener('click', (event) => {
+	toggleAcitveClass('.header__country')
+})
 
-	$('.burger').click(function (event) {
-		$('.burger, body, .nav').toggleClass('active');
-	});
+// Burger 
 
-	$('.exlog__title').click(function (event) {
-		if ($('.exlog__exps, .exlog__logs').hasClass('one')) {
-			$('.exlog__title').not($(this)).removeClass('active');
-			$('.exlog__content').not($(this).next()).slideUp(300);
-		}
-		$(this).toggleClass('active').next().slideToggle(300);
-	});
+document.querySelector('.burger').addEventListener('click', () => {
+	toggleAcitveClass('.burger')
+	toggleAcitveClass('body')
+	toggleAcitveClass('.nav')
+})
 
-});
+function toggleAcitveClass(selector) {
+	document.querySelector(selector).classList.toggle('active')
+}
+
+// Exlog Tabs 
 
 const tabBtns = document.querySelectorAll('.exlog__tabs-btn');
 const tabItems = document.querySelectorAll('.exlog__tabs-item');
@@ -41,3 +41,18 @@ tabBtns.forEach(item => {
 	})
 }
 )
+
+// Exlog Accordion
+
+document.querySelectorAll('.exlog__trigger').forEach(trigger => {
+	trigger.addEventListener('click', () => {
+		const parent = trigger.parentElement;
+
+		if (parent.classList.contains('active')) {
+			parent.classList.remove('active')
+		} else {
+			document.querySelectorAll('.exlog__item').forEach(item => item.classList.remove('active'))
+			parent.classList.add('active')
+		}
+	})
+})
