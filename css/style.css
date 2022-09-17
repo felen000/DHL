@@ -880,6 +880,16 @@ main {
 .exlog {
   padding: 100px 0;
 }
+@media (max-width: 767px) {
+  .exlog {
+    padding: 50px 0;
+  }
+}
+@media (max-width: 480px) {
+  .exlog {
+    font-size: 0.9em;
+  }
+}
 .exlog__inner {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -894,6 +904,13 @@ main {
       -ms-flex: 0 1 50%;
           flex: 0 1 50%;
   background-color: #ba0000;
+}
+@media (max-width: 767px) {
+  .exlog__inner .exlog__tabs {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 100%;
+            flex: 0 1 100%;
+  }
 }
 .exlog__inner .exlog__tabs-nav {
   display: -webkit-box;
@@ -911,6 +928,11 @@ main {
   letter-spacing: 0.1em;
   color: #fff;
 }
+@media (max-width: 840px) {
+  .exlog__inner .exlog__tabs-nav .exlog__tabs-btn {
+    padding: 15px;
+  }
+}
 .exlog__inner .exlog__tabs-nav .exlog__tabs-btn.active {
   background-color: #ffcc00;
   color: #ba0000;
@@ -927,6 +949,12 @@ main {
 .exlog__inner .exlog__tabs .exlog__exps,
 .exlog__inner .exlog__tabs .exlog__logs {
   padding: 40px 40px 20px;
+}
+@media (max-width: 840px) {
+  .exlog__inner .exlog__tabs .exlog__exps,
+.exlog__inner .exlog__tabs .exlog__logs {
+    padding: 20px;
+  }
 }
 .exlog__inner .exlog__tabs .exlog__exps .exlog__item,
 .exlog__inner .exlog__tabs .exlog__logs .exlog__item {
@@ -964,6 +992,12 @@ main {
   padding: 20px;
   position: relative;
 }
+@media (max-width: 480px) {
+  .exlog__inner .exlog__tabs .exlog__exps .exlog__item .exlog__trigger,
+.exlog__inner .exlog__tabs .exlog__logs .exlog__item .exlog__trigger {
+    font-size: 0.9em;
+  }
+}
 .exlog__inner .exlog__tabs .exlog__exps .exlog__item .exlog__trigger .fa,
 .exlog__inner .exlog__tabs .exlog__logs .exlog__item .exlog__trigger .fa {
   position: absolute;
@@ -983,6 +1017,13 @@ main {
   border-top: none;
   display: none;
 }
+@media (max-width: 480px) {
+  .exlog__inner .exlog__tabs .exlog__exps .exlog__item .exlog__content,
+.exlog__inner .exlog__tabs .exlog__logs .exlog__item .exlog__content {
+    font-size: 0.9em;
+    padding: 20px 15px;
+  }
+}
 .exlog__inner .exlog__tabs .exlog__exps .exlog__item .exlog__content .exlog__label,
 .exlog__inner .exlog__tabs .exlog__logs .exlog__item .exlog__content .exlog__label {
   letter-spacing: 0.1em;
@@ -999,11 +1040,19 @@ main {
   color: #ffcc00;
   margin-right: 10px;
 }
-.exlog__inner .exlog__right {
+.exlog__inner .exlog__img {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 40%;
           flex: 0 1 40%;
-  position: relative;
+}
+@media (max-width: 767px) {
+  .exlog__inner .exlog__img {
+    display: none;
+  }
+}
+.exlog__inner .exlog__img img {
+  max-height: 100%;
+  width: 100%;
 }
 
 .features {
